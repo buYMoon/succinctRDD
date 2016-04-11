@@ -20,6 +20,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-yarn-client</artifactId>
+            <version>2.6.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>${scala.complete.version}</version>
@@ -38,9 +44,8 @@
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_${scala.minor.version}</artifactId>
-            <version>${spark.version}</version>
-            <scope>provided</scope>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>1.6.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -60,6 +65,18 @@
             <version>${spark.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- Succinct RDD dependency -->
+        <!--<dependency>-->
+        <!--<groupId>amplab</groupId>-->
+        <!--<artifactId>succinct-core</artifactId>-->
+        <!--<version>0.1.5</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>amplab</groupId>-->
+        <!--<artifactId>succinct-spark</artifactId>-->
+        <!--<version>0.1.5</version>-->
+        <!--</dependency>-->
+
     </dependencies>
 
 </project>
