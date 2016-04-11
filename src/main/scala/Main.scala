@@ -11,9 +11,11 @@ object Main {
     val conf = new SparkConf().setAppName("succinctRDD").setMaster("spark://10.244.48.204:7077")
     val sc = new SparkContext(conf)
 
+    println("Read the test file.")
     // Read text data from file; sc is the SparkContext
-    val wikiData = sc.textFile("/home/clariion/Downloads/emc_ccoe/tmp/new_enwiki-latest-pages-articles.xml").map(_.getBytes)
+    val wikiData = sc.textFile("file:///home/clariion/Downloads/emc_ccoe/tmp/data").map(_.getBytes)
 
+    println("Convert to succinctRDD.")
     // Converts the wikiData RDD to a SuccinctRDD, serializing each record into an
     // array of bytes. We persist the RDD in memory to perform in-memory queries.
     val wikiSuccinctData = wikiData.succinct.persist()
